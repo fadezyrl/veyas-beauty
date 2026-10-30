@@ -28,7 +28,7 @@ type LocaleProviderProps = {
 };
 
 const isLocale = (value: string | null): value is Locale => {
-  return value === "EN" || value === "UR";
+  return value === "EN" || value === "NL";
 };
 
 const subscribeLocale = (onChange: () => void): (() => void) => {
@@ -60,7 +60,7 @@ export const LocaleProvider = ({
     getServerSnapshot,
   );
   const dictionary = getDictionary(locale);
-  const dir = locale === "UR" ? "rtl" : "ltr";
+  const dir = "ltr";
 
   const setLocale = (next: Locale): void => {
     window.localStorage.setItem(LOCALE_STORAGE_KEY, next);

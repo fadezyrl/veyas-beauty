@@ -4,13 +4,15 @@ import type { JSX } from "react";
 import { SITE } from "@/data/site";
 import { useLocale } from "@/context/LocaleContext";
 import { Reveal } from "@/components/Reveal/Reveal";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { ContactMap } from "./ContactMap";
 import "./contact.desktop.css";
 import "./contact.mobile.css";
 
 export const Contact = (): JSX.Element => {
   const { dictionary } = useLocale();
-  const { contact } = dictionary;
+  const { contact, booking } = dictionary;
+  const whatsappUrl = buildWhatsAppUrl(booking.generalMessage);
 
   return (
     <section className="contact" id="contact">
@@ -42,7 +44,12 @@ export const Contact = (): JSX.Element => {
             </a>
           </dd>
         </dl>
-        <a className="btn" href="#book">
+        <a
+          className="btn"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {contact.book}
         </a>
       </div>

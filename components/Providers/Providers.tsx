@@ -11,7 +11,7 @@ const DocumentLocale = ({ children }: ProvidersProps): JSX.Element => {
   const { dir, locale } = useLocale();
 
   useEffect(() => {
-    document.documentElement.lang = locale === "UR" ? "ur" : "en";
+    document.documentElement.lang = locale === "NL" ? "nl" : "en";
     document.documentElement.dir = dir;
   }, [dir, locale]);
 

@@ -3,11 +3,13 @@
 import type { JSX } from "react";
 import { SITE } from "@/data/site";
 import { useLocale } from "@/context/LocaleContext";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import "./footer.desktop.css";
 import "./footer.mobile.css";
 
 export const Footer = (): JSX.Element => {
   const { dictionary } = useLocale();
+  const whatsappUrl = buildWhatsAppUrl(dictionary.booking.generalMessage);
 
   return (
     <footer className="site-footer">
@@ -36,10 +38,27 @@ export const Footer = (): JSX.Element => {
             {SITE.instagramHandle}
           </a>
         </div>
-        <a className="btn inv" href="#book">
+        <a
+          className="btn inv"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {dictionary.footer.book}
         </a>
         <p className="site-footer__copy">{dictionary.footer.copyright}</p>
+        <p className="site-footer__credit">
+          {dictionary.footer.developedBy}{" "}
+          <a
+            className="site-footer__credit-link"
+            href={SITE.developerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={dictionary.footer.developerAria}
+          >
+            {SITE.developerName}
+          </a>
+        </p>
       </div>
     </footer>
   );

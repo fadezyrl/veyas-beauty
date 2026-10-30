@@ -4,21 +4,45 @@ import { useEffect, useRef, useState, type JSX } from "react";
 import { SITE } from "@/data/site";
 import { useLocale } from "@/context/LocaleContext";
 import type { Locale } from "@/lib/dictionary";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import "./nav.desktop.css";
 import "./nav.mobile.css";
 
 const MOBILE_MAX = 640;
 
+const LOCALES: Locale[] = ["EN", "NL"];
+
 export const Nav = (): JSX.Element => {
   const { dictionary, locale, setLocale } = useLocale();
   const [scrolled, setScrolled] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const linksRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
     const onScroll = (): void => {
-      setScrolled(window.scrollY > 40);
+      const currentY = window.scrollY;
+      const previousY = lastScrollY.current;
+      const delta = currentY - previousY;
+
+      setScrolled(currentY > 40);
+
+      if (currentY <= 40) {
+        setNavHidden(false);
+      } else if (delta > 6) {
+        setNavHidden(true);
+        setLangOpen(false);
+      } else if (delta < -6) {
+        setNavHidden(false);
+      }
+
+      lastScrollY.current = currentY;
     };
 
     const onResize = (): void => {
@@ -50,6 +74,7 @@ export const Nav = (): JSX.Element => {
     const onKeyDown = (event: KeyboardEvent): void => {
       if (event.key === "Escape") {
         setMenuOpen(false);
+        setLangOpen(false);
       }
     };
 
@@ -59,6 +84,38 @@ export const Nav = (): JSX.Element => {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    if (!langOpen) {
+      return;
+    }
+
+    const onPointerDown = (event: MouseEvent | TouchEvent): void => {
+      const node = langRef.current;
+      if (!node) {
+        return;
+      }
+      const target = event.target;
+      if (target instanceof Node && !node.contains(target)) {
+        setLangOpen(false);
+      }
+    };
+
+    const onKeyDown = (event: KeyboardEvent): void => {
+      if (event.key === "Escape") {
+        setLangOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [langOpen]);
 
   useEffect(() => {
     const node = linksRef.current;
@@ -78,6 +135,7 @@ export const Nav = (): JSX.Element => {
 
   const closeMenu = (): void => {
     setMenuOpen(false);
+    setLangOpen(false);
   };
 
   const toggleMenu = (): void => {
@@ -87,13 +145,18 @@ export const Nav = (): JSX.Element => {
     setMenuOpen((open) => !open);
   };
 
+  const localeLabel = (code: Locale): string => {
+    return code === "NL" ? dictionary.nav.langNl : dictionary.nav.langEn;
+  };
+
   const onLocaleChange = (next: Locale): void => {
     setLocale(next);
+    setLangOpen(false);
   };
 
   return (
     <nav
-      className={`site-nav${scrolled ? " is-scrolled" : ""}`}
+      className={`site-nav${scrolled ? " is-scrolled" : ""}${menuOpen ? " is-menu-open" : ""}${navHidden && !menuOpen ? " is-hidden" : ""}`}
       aria-label={dictionary.nav.primaryAria}
     >
       <a
@@ -108,26 +171,42 @@ export const Nav = (): JSX.Element => {
 
       <div className="site-nav__actions">
         <div
-          className="site-nav__lang"
-          role="group"
-          aria-label={dictionary.nav.langSwitchAria}
+          className={`site-nav__lang${langOpen ? " is-open" : ""}`}
+          ref={langRef}
         >
           <button
             type="button"
-            className={locale === "EN" ? "is-active" : ""}
-            aria-pressed={locale === "EN"}
-            onClick={() => onLocaleChange("EN")}
+            className="site-nav__lang-toggle"
+            aria-label={dictionary.nav.langSwitchAria}
+            aria-haspopup="listbox"
+            aria-expanded={langOpen}
+            aria-controls="site-nav-lang-menu"
+            onClick={() => setLangOpen((open) => !open)}
           >
-            {dictionary.nav.langEn}
+            <span>{localeLabel(locale)}</span>
+            <span className="site-nav__lang-caret" aria-hidden="true" />
           </button>
-          <button
-            type="button"
-            className={locale === "UR" ? "is-active" : ""}
-            aria-pressed={locale === "UR"}
-            onClick={() => onLocaleChange("UR")}
+          <ul
+            id="site-nav-lang-menu"
+            className="site-nav__lang-menu"
+            role="listbox"
+            aria-label={dictionary.nav.langSwitchAria}
+            hidden={!langOpen}
           >
-            {dictionary.nav.langUr}
-          </button>
+            {LOCALES.map((code) => (
+              <li key={code} role="presentation">
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={locale === code}
+                  className={locale === code ? "is-active" : ""}
+                  onClick={() => onLocaleChange(code)}
+                >
+                  {localeLabel(code)}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <button
@@ -165,7 +244,13 @@ export const Nav = (): JSX.Element => {
         >
           {dictionary.nav.academy}
         </a>
-        <a href="#book" className="btn" onClick={closeMenu}>
+        <a
+          href={buildWhatsAppUrl(dictionary.booking.generalMessage)}
+          className="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
+        >
           {dictionary.nav.book}
         </a>
       </div>

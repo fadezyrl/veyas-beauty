@@ -1,12 +1,12 @@
 import { en } from "./en";
-import { ur } from "./ur";
+import { nl } from "./nl";
 import type { Dictionary, Locale } from "./types";
 
 export type { Dictionary, Locale };
 
 export const dictionaries: Record<Locale, Dictionary> = {
   EN: en,
-  UR: ur,
+  NL: nl,
 };
 
 export const getDictionary = (locale: Locale): Dictionary => {

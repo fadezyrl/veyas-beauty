@@ -1,4 +1,4 @@
-export type Locale = "EN" | "UR";
+export type Locale = "EN" | "NL";
 
 export type Dictionary = {
   meta: {
@@ -17,7 +17,7 @@ export type Dictionary = {
     academy: string;
     book: string;
     langEn: string;
-    langUr: string;
+    langNl: string;
     langSwitchAria: string;
   };
   hero: {
@@ -106,36 +106,11 @@ export type Dictionary = {
     titleBefore: string;
     titleEm: string;
     body: string;
-    steps: {
-      service: string;
-      date: string;
-      time: string;
-      details: string;
-      review: string;
-    };
-    dateLabel: string;
-    dateNote: string;
-    name: string;
-    contact: string;
-    notes: string;
-    send: string;
-    continue: string;
-    back: string;
-    continueHint: string;
-    copied: string;
-    copyFallback: string;
-    messageGreeting: string;
-    messageService: string;
-    messageDate: string;
-    messageTime: string;
-    messageName: string;
-    messageContact: string;
-    messageNotes: string;
-    times: {
-      morning: string;
-      afternoon: string;
-      evening: string;
-    };
+    cta: string;
+    note: string;
+    pickService: string;
+    generalMessage: string;
+    serviceMessage: string;
   };
   contact: {
     label: string;
@@ -155,5 +130,7 @@ export type Dictionary = {
     contact: string;
     book: string;
     copyright: string;
+    developedBy: string;
+    developerAria: string;
   };
 };

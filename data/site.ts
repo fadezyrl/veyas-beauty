@@ -9,8 +9,9 @@ export const SITE = {
   phone: "+32 470 00 00 00",
   instagramHandle: "@veyasbeauty",
   instagramUrl: "https://www.instagram.com/veyasbeauty/",
-  instagramDmUrl: "https://ig.me/m/veyasbeauty",
   academyUrl: "https://www.instagram.com/veyas.academy/",
+  developerUrl: "https://www.fadezyrl.com/",
+  developerName: "fadezy",
   map: {
     lat: 51.2194,
     lng: 4.4025,

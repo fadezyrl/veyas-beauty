@@ -18,7 +18,7 @@ export const en: Dictionary = {
     academy: "Veyas Academy",
     book: "Book Appointment",
     langEn: "EN",
-    langUr: "UR",
+    langNl: "NL",
     langSwitchAria: "Switch language",
   },
   hero: {
@@ -133,41 +133,16 @@ export const en: Dictionary = {
   },
   booking: {
     label: "Appointments",
-    titleBefore: "Request ",
-    titleEm: "a time.",
-    body: "Choose a service and a preferred slot. Your request is sent to VEYAS directly, and the appointment is confirmed personally — nothing is booked until you hear back.",
-    steps: {
-      service: "Select a service",
-      date: "Preferred date",
-      time: "Preferred time",
-      details: "Your details",
-      review: "Review & send",
-    },
-    dateLabel: "Date",
-    dateNote: "Your date is a preference. Availability is confirmed by VEYAS.",
-    name: "Name",
-    contact: "Email or phone",
-    notes: "Notes (optional)",
-    send: "Send request via Instagram",
-    continue: "Continue",
-    back: "Back",
-    continueHint: "Complete this step to continue.",
-    copied:
-      "Your request is copied. Paste it into the Instagram message. Not confirmed until VEYAS replies.",
-    copyFallback:
-      "Copy the request above and send it to VEYAS. Not confirmed until VEYAS replies.",
-    messageGreeting: "Hello VEYAS, I would like to request an appointment.",
-    messageService: "Service",
-    messageDate: "Preferred date",
-    messageTime: "Preferred time",
-    messageName: "Name",
-    messageContact: "Contact",
-    messageNotes: "Notes",
-    times: {
-      morning: "Morning (09:00–12:00)",
-      afternoon: "Afternoon (12:00–16:00)",
-      evening: "Evening (16:00–19:00)",
-    },
+    titleBefore: "Book on ",
+    titleEm: "WhatsApp.",
+    body: "Send a quick message on WhatsApp. Share the service you want and a preferred day — VEYAS confirms personally. Nothing is booked until you hear back.",
+    cta: "Message on WhatsApp",
+    note: "Prefer a specific service? Use Book next to any service above — it opens WhatsApp with that service ready.",
+    pickService: "Or book a service",
+    generalMessage:
+      "Hello VEYAS, I would like to book an appointment.\nService:\nPreferred date:\nPreferred time:\nName:",
+    serviceMessage:
+      "Hello VEYAS, I would like to book:\nService: {service}\nPreferred date:\nPreferred time:\nName:",
   },
   contact: {
     label: "Visit",
@@ -187,5 +162,7 @@ export const en: Dictionary = {
     contact: "Contact",
     book: "Book Appointment",
     copyright: "© 2026 VEYAS Beauty. Nail tech & beauty creator. All rights reserved.",
+    developedBy: "Developed by",
+    developerAria: "Visit Fadezy website",
   },
 };

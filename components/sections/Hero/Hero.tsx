@@ -5,12 +5,14 @@ import { MEDIA } from "@/data/media";
 import { useLocale } from "@/context/LocaleContext";
 import { Reveal } from "@/components/Reveal/Reveal";
 import { MediaFrame } from "@/components/MediaFrame/MediaFrame";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import "./hero.desktop.css";
 import "./hero.mobile.css";
 
 export const Hero = (): JSX.Element => {
   const { dictionary } = useLocale();
-  const { hero } = dictionary;
+  const { hero, booking } = dictionary;
+  const whatsappUrl = buildWhatsAppUrl(booking.generalMessage);
 
   return (
     <section className="hero">
@@ -30,7 +32,12 @@ export const Hero = (): JSX.Element => {
       />
       <Reveal className="hero__sub">
         <p>{hero.sub}</p>
-        <a className="btn" href="#book">
+        <a
+          className="btn"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {hero.cta}
         </a>
       </Reveal>
