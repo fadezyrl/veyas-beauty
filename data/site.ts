@@ -1,26 +1,32 @@
 export const SITE = {
   brand: "VEYAS",
-  brandSub: "BEAUTY",
+  brandSub: "NAIL TECH & BEAUTY CREATOR",
   location: "Antwerp · Belgium",
   city: "Antwerp, Belgium",
-  address: "[Street address], Antwerp, Belgium",
-  hours: "[Opening hours — by appointment]",
-  email: "[email]",
-  phone: "[phone]",
-  instagramHandle: "@[handle]",
-  instagramUrl: "https://www.instagram.com/",
-  instagramDmUrl: "https://ig.me/m/",
-  academyUrl: "#",
+  address: "Antwerp, Belgium",
+  hours: "Tue–Sat · 10:00–18:00 · By appointment",
+  email: "hello@veyasbeauty.com",
+  phone: "+32 470 00 00 00",
+  instagramHandle: "@veyasbeauty",
+  instagramUrl: "https://www.instagram.com/veyasbeauty/",
+  instagramDmUrl: "https://ig.me/m/veyasbeauty",
+  academyUrl: "https://www.instagram.com/veyas.academy/",
+  map: {
+    lat: 51.2194,
+    lng: 4.4025,
+    /** South-West / North-East bbox for OpenStreetMap embed */
+    bbox: {
+      west: 4.372,
+      south: 51.204,
+      east: 4.433,
+      north: 51.235,
+    },
+  },
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=51.2194%2C4.4025",
 } as const;
 
-export const PORTFOLIO_ITEMS = [
-  { id: "m1", className: "m1", labelKey: "portfolio.items.french" },
-  { id: "m2", className: "m2", labelKey: "portfolio.items.nude" },
-  { id: "m3", className: "m3", labelKey: "portfolio.items.gel" },
-  { id: "m4", className: "m4", labelKey: "portfolio.items.detailed" },
-  { id: "m5", className: "m5", labelKey: "portfolio.items.creative" },
-  { id: "m6", className: "m6", labelKey: "portfolio.items.everyday" },
-] as const;
+export { PORTFOLIO_MEDIA as PORTFOLIO_ITEMS } from "./media";
 
 export const EXPERIENCE_STEPS = [
   { id: "01", labelKey: "experience.steps.attention" },

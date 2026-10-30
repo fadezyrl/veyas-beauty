@@ -1,0 +1,44 @@
+@media (min-width: 641px) {
+  .site-footer {
+    padding: clamp(60px, 8vw, 110px) var(--pad) 40px;
+    background: var(--black);
+    color: var(--cream);
+  }
+
+  .site-footer__wm {
+    font: 300 clamp(60px, 17vw, 260px) / 0.85 var(--serif);
+    letter-spacing: 0.14em;
+    color: var(--taupe);
+    margin-bottom: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .site-footer__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 60px;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid #3a3634;
+    padding-top: 30px;
+    font-size: 14px;
+  }
+
+  .site-footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .site-footer__copy {
+    width: 100%;
+    color: var(--grey);
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .site-footer a:hover {
+    color: var(--taupe);
+  }
+}

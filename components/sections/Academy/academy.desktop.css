@@ -1,0 +1,22 @@
+@media (min-width: 641px) {
+  .acad {
+    background: var(--cream);
+    border-top: 1px solid var(--taupe);
+    padding-block: clamp(56px, 7vw, 100px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .acad h3 {
+    font-size: clamp(28px, 3.4vw, 48px);
+    margin: 12px 0 10px;
+  }
+
+  .acad p {
+    max-width: 440px;
+    color: var(--text-muted);
+  }
+}

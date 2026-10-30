@@ -1,0 +1,29 @@
+@media (max-width: 640px) {
+  .intro {
+    background: var(--off);
+    display: block;
+  }
+
+  .intro__years {
+    margin-bottom: 24px;
+  }
+
+  .intro__big {
+    font: 300 clamp(28px, 8vw, 40px) / 1.18 var(--serif);
+  }
+
+  .intro__big em {
+    color: var(--grey);
+  }
+
+  .intro__small {
+    margin-top: 36px;
+    color: var(--text-muted);
+  }
+
+  .intro__tiny {
+    width: 46%;
+    margin-top: 40px;
+    aspect-ratio: 4 / 5;
+  }
+}

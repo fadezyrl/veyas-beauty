@@ -1,0 +1,34 @@
+@media (min-width: 641px) {
+  .artist {
+    background: var(--off);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: center;
+  }
+
+  .artist__portrait {
+    grid-column: 1 / 6;
+    aspect-ratio: 3 / 4.4;
+  }
+
+  .artist__txt {
+    grid-column: 7 / 13;
+  }
+
+  .artist__txt h2 {
+    margin: 22px 0 34px;
+  }
+
+  .artist__sig {
+    font: italic 300 34px var(--serif);
+    color: var(--grey);
+    margin-top: 30px;
+  }
+
+  .artist__txt p {
+    max-width: 520px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+}

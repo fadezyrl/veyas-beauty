@@ -1,0 +1,33 @@
+@media (max-width: 640px) {
+  .artist {
+    background: var(--off);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .artist__txt {
+    order: 1;
+  }
+
+  .artist__portrait {
+    order: 2;
+    width: 84%;
+    margin-top: 40px;
+    aspect-ratio: 3 / 4.4;
+  }
+
+  .artist__txt h2 {
+    margin: 16px 0 28px;
+  }
+
+  .artist__sig {
+    font: italic 300 28px var(--serif);
+    color: var(--grey);
+    margin-top: 24px;
+  }
+
+  .artist__txt p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+}

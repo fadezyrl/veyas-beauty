@@ -7,6 +7,7 @@ export type Dictionary = {
   };
   nav: {
     homeAria: string;
+    primaryAria: string;
     menu: string;
     close: string;
     services: string;
@@ -15,6 +16,9 @@ export type Dictionary = {
     contact: string;
     academy: string;
     book: string;
+    langEn: string;
+    langUr: string;
+    langSwitchAria: string;
   };
   hero: {
     line1: string;
@@ -48,6 +52,9 @@ export type Dictionary = {
       nailArt: { name: string; description: string };
       infill: { name: string; description: string };
       removal: { name: string; description: string };
+      lashExtensions: { name: string; description: string };
+      lashRefill: { name: string; description: string };
+      powderBrows: { name: string; description: string };
     };
   };
   portfolio: {
@@ -57,11 +64,11 @@ export type Dictionary = {
     instagram: string;
     items: {
       french: string;
-      nude: string;
-      gel: string;
-      detailed: string;
-      creative: string;
-      everyday: string;
+      powderBrows: string;
+      lashes: string;
+      powderProcess: string;
+      freshLashes: string;
+      nailArt: string;
     };
   };
   artist: {
@@ -114,8 +121,16 @@ export type Dictionary = {
     send: string;
     continue: string;
     back: string;
+    continueHint: string;
     copied: string;
     copyFallback: string;
+    messageGreeting: string;
+    messageService: string;
+    messageDate: string;
+    messageTime: string;
+    messageName: string;
+    messageContact: string;
+    messageNotes: string;
     times: {
       morning: string;
       afternoon: string;
@@ -131,7 +146,8 @@ export type Dictionary = {
     contact: string;
     instagram: string;
     mapLabel: string;
-    mapNote: string;
+    mapCity: string;
+    openMaps: string;
     book: string;
   };
   footer: {

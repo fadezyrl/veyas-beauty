@@ -1,0 +1,37 @@
+@media (min-width: 641px) {
+  .intro {
+    background: var(--off);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0 24px;
+  }
+
+  .intro__years {
+    grid-column: 1 / 5;
+    margin-bottom: 30px;
+  }
+
+  .intro__big {
+    grid-column: 2 / 11;
+    grid-row: 2;
+    font: 300 clamp(28px, 4.4vw, 62px) / 1.18 var(--serif);
+  }
+
+  .intro__big em {
+    color: var(--grey);
+  }
+
+  .intro__small {
+    grid-column: 6 / 12;
+    margin-top: 60px;
+    color: var(--text-muted);
+    max-width: 520px;
+  }
+
+  .intro__tiny {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    margin-top: -60px;
+    aspect-ratio: 4 / 5;
+  }
+}
