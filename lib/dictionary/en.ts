@@ -1,0 +1,166 @@
+import type { Dictionary } from "./types";
+
+export const en: Dictionary = {
+  meta: {
+    title: "VEYAS Beauty — Nail Artistry in Antwerp",
+    description:
+      "VEYAS Beauty is an independent nail artist in Antwerp, Belgium. Nail artistry, extensions and personal nail care.",
+  },
+  nav: {
+    homeAria: "VEYAS Beauty home",
+    menu: "Menu",
+    close: "Close",
+    services: "Nail Services",
+    portfolio: "Portfolio",
+    about: "About",
+    contact: "Contact",
+    academy: "Veyas Academy",
+    book: "Book Appointment",
+  },
+  hero: {
+    line1: "Beauty",
+    line2Before: "in ",
+    line2Em: "Every",
+    line2After: " Detail.",
+    sub: "Thoughtfully crafted nail artistry, where precision meets personal expression.",
+    cta: "Book Appointment",
+    imageLabel: "Replace — hero nail photograph (portrait)",
+    location: "Antwerp · Belgium",
+  },
+  intro: {
+    years: "Since 6+ years",
+    bigBefore: "Every set begins with a conversation, and ends with ",
+    bigEm: "a detail only you",
+    bigAfter:
+      " will notice. Six years of nail artistry have taught me that elegance is rarely loud — it is exact.",
+    small:
+      "VEYAS Beauty is an independent practice in Antwerp. Each appointment is unhurried and individual: your nails, your preferences, my full attention from the first file stroke to the final coat.",
+    imageLabel: "Replace — close-up detail",
+  },
+  services: {
+    label: "The Menu",
+    titleBefore: "Nail ",
+    titleEm: "Services",
+    pricesNote: "Prices to be confirmed",
+    note: "Placeholder services, durations and prices — edit the SERVICES list once real pricing is supplied.",
+    book: "Book",
+    items: {
+      classicManicure: {
+        name: "Classic Manicure",
+        description: "Shaping, cuticle care and polish.",
+      },
+      gelPolish: {
+        name: "Gel Polish",
+        description: "Long-wear colour with a glass finish.",
+      },
+      extensions: {
+        name: "Gel / Acrylic Extensions",
+        description: "Sculpted length and shape, tailored to your hands.",
+      },
+      nailArt: {
+        name: "Nail Art",
+        description: "Hand-painted detail, French and bespoke designs.",
+      },
+      infill: {
+        name: "Infill & Maintenance",
+        description: "Refresh and rebalance an existing set.",
+      },
+      removal: {
+        name: "Removal & Care",
+        description: "Gentle removal with a nourishing treatment.",
+      },
+    },
+  },
+  portfolio: {
+    label: "Nail Artistry",
+    titleBefore: "Selected ",
+    titleEm: "Work",
+    instagram: "Follow on Instagram",
+    items: {
+      french: "French manicure",
+      nude: "Nude & natural",
+      gel: "Gel extension",
+      detailed: "Detailed nail art",
+      creative: "Creative & colour",
+      everyday: "Everyday elegance",
+    },
+  },
+  artist: {
+    label: "The Artist",
+    titleBefore: "Behind the ",
+    titleEm: "brush.",
+    p1: "[Artist name placeholder] began working with nails more than six years ago, drawn to the quiet discipline of getting a small surface exactly right.",
+    p2: "Her approach is personal rather than prescriptive: she listens, advises honestly, then builds a design around the hands it will live on.",
+    signature: "— Veyas",
+    imageLabel: "Replace — portrait of the artist",
+  },
+  experience: {
+    label: "The Veyas Experience",
+    titleBefore: "An appointment, ",
+    titleEm: "made for you.",
+    imageLabel: "Replace — studio atmosphere",
+    steps: {
+      attention: "Personal attention",
+      precision: "Precision in every line",
+      artistry: "Professional artistry",
+      space: "A welcoming space",
+      preferences: "Your preferences, first",
+    },
+  },
+  academy: {
+    label: "Education",
+    titleBefore: "Veyas ",
+    titleEm: "Academy",
+    body: "Professional beauty training, shared by the artist behind VEYAS.",
+    cta: "Explore the academy",
+    ctaAria: "Explore Veyas Academy (link to be added)",
+  },
+  booking: {
+    label: "Appointments",
+    titleBefore: "Request ",
+    titleEm: "a time.",
+    body: "Choose a service and a preferred slot. Your request is sent to VEYAS directly, and the appointment is confirmed personally — nothing is booked until you hear back.",
+    steps: {
+      service: "Select a service",
+      date: "Preferred date",
+      time: "Preferred time",
+      details: "Your details",
+      review: "Review & send",
+    },
+    dateLabel: "Date",
+    dateNote: "Your date is a preference. Availability is confirmed by VEYAS.",
+    name: "Name",
+    contact: "Email or phone",
+    notes: "Notes (optional)",
+    send: "Send request via Instagram",
+    continue: "Continue",
+    back: "Back",
+    copied:
+      "Your request is copied. Paste it into the Instagram message. Not confirmed until VEYAS replies.",
+    copyFallback:
+      "Copy the request above and send it to VEYAS. Not confirmed until VEYAS replies.",
+    times: {
+      morning: "Morning (09:00–12:00)",
+      afternoon: "Afternoon (12:00–16:00)",
+      evening: "Evening (16:00–19:00)",
+    },
+  },
+  contact: {
+    label: "Visit",
+    titleBefore: "Find ",
+    titleEm: "VEYAS",
+    location: "Location",
+    hours: "Hours",
+    contact: "Contact",
+    instagram: "Instagram",
+    mapLabel: "Map",
+    mapNote: "Embed Google or OpenStreetMap here once the address is confirmed.",
+    book: "Book Appointment",
+  },
+  footer: {
+    navigate: "Navigate",
+    contact: "Contact",
+    book: "Book Appointment",
+    copyright: "© 2026 VEYAS Beauty. All rights reserved.",
+  },
+};

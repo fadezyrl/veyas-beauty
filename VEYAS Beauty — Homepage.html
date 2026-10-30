@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VEYAS Beauty — Nail Artistry in Antwerp</title>
+<meta name="description" content="VEYAS Beauty is an independent nail artist in Antwerp, Belgium. Nail artistry, extensions and personal nail care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--taupe:#DED4CC;--cream:#F7F3EF;--black:#151312;--grey:#99918D;--off:#FCFAF8;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif;--pad:clamp(20px,5vw,72px);color-scheme:light;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--off);color:var(--black);font:300 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;padding-top:env(safe-area-inset-top,0px)}
+a{color:inherit;text-decoration:none}
+.lbl{font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--grey)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1;letter-spacing:-.01em}
+h2{font-size:clamp(38px,6vw,84px)}
+em{font-style:italic;font-weight:300}
+section{padding:clamp(72px,11vw,160px) var(--pad);position:relative}
+.btn{display:inline-block;font:400 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;padding:17px 30px;border:1px solid currentColor;transition:background .4s,color .4s,border-color .4s}
+.btn:hover{background:var(--black);color:var(--off);border-color:var(--black)}
+.dark .btn:hover,.btn.inv:hover{background:var(--off);color:var(--black);border-color:var(--off)}
+.ph{background:linear-gradient(160deg,var(--taupe),#cfc3b9);position:relative;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
+.ph span{font:400 10px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#7d756f}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.ph.rv{clip-path:inset(0 0 100% 0);transform:none;transition:clip-path 1.2s cubic-bezier(.7,0,.2,1),opacity 1s}
+.ph.rv.in{clip-path:inset(0)}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:calc(22px + env(safe-area-inset-top,0px)) var(--pad) 22px;transition:background .5s,padding .5s,border-color .5s;border-bottom:1px solid transparent}
+nav.s{background:rgba(252,250,248,.94);backdrop-filter:blur(10px);padding-top:calc(14px + env(safe-area-inset-top,0px));padding-bottom:14px;border-color:var(--taupe)}
+.logo{font:400 22px/1 var(--serif);letter-spacing:.42em;padding-left:.42em}
+.logo small{display:block;font:300 8px/1 var(--sans);letter-spacing:.5em;margin-top:6px;color:var(--grey);text-align:center}
+.links{display:flex;gap:34px;align-items:center}
+.links a:not(.btn){font:400 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;position:relative}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.links a:hover::after{transform:scaleX(1)}
+.links .acad{color:var(--grey)}
+.links .btn{padding:13px 22px}
+.burger{display:none;background:none;border:0;font:400 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;color:inherit}
+/* hero */
+.hero{min-height:100svh;background:var(--cream);display:grid;grid-template-columns:repeat(12,1fr);align-items:end;padding-top:150px;padding-bottom:60px;overflow:hidden}
+.hero h1{grid-column:1/9;grid-row:1;font-size:clamp(56px,11.5vw,184px);align-self:center;z-index:2;line-height:.88}
+.hero h1 em{display:block;padding-left:1.2em}
+.hero .img{grid-column:8/13;grid-row:1/3;aspect-ratio:3/4.2;align-self:start;margin-top:-30px}
+.hero .sub{grid-column:1/6;grid-row:2;align-self:end;max-width:380px}
+.hero .sub p{margin:0 0 28px;color:#4a4542}
+.hero .side{position:absolute;left:var(--pad);bottom:22px}
+/* intro */
+.intro{background:var(--off);display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px}
+.intro .big{grid-column:2/11;font:300 clamp(28px,4.4vw,62px)/1.18 var(--serif)}
+.intro .big em{color:var(--grey)}
+.intro .small{grid-column:6/12;margin-top:60px;color:#4a4542;max-width:520px}
+.intro .tiny{grid-column:1/4;grid-row:3;margin-top:-60px;aspect-ratio:4/5}
+.intro .yrs{grid-column:1/5;margin-bottom:30px}
+/* services */
+.svc{background:var(--taupe)}
+.svc header{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:70px}
+.row{display:grid;grid-template-columns:60px 1.2fr 1.6fr 110px 130px 110px;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(21,19,18,.25);transition:padding .4s}
+.row:last-child{border-bottom:1px solid rgba(21,19,18,.25)}
+.row:hover{padding-left:14px}
+.row h3{font-size:clamp(26px,2.6vw,38px)}
+.row p{color:#4a4542;font-size:15px}
+.row .pr{font:400 italic 22px var(--serif);white-space:nowrap}
+.row .bk{font:400 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid;justify-self:end;white-space:nowrap}
+.note{margin-top:28px;font-size:13px;color:#6b635e}
+/* portfolio */
+.port{background:var(--cream)}
+.port header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;gap:24px;flex-wrap:wrap}
+.mos{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,2vw,28px);align-items:start}
+.mos .ph{min-height:0}
+.m1{grid-column:1/6;aspect-ratio:4/5.4}
+.m2{grid-column:7/10;aspect-ratio:1/1.3;margin-top:140px}
+.m3{grid-column:10/13;aspect-ratio:3/4;margin-top:40px}
+.m4{grid-column:2/5;aspect-ratio:3/4;margin-top:-60px}
+.m5{grid-column:5/9;aspect-ratio:5/4;margin-top:60px}
+.m6{grid-column:9/13;aspect-ratio:4/5.5;margin-top:10px}
+.mos .ph:hover{filter:brightness(.97)}
+/* artist */
+.artist{background:var(--off);display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center}
+.artist .portrait{grid-column:1/6;aspect-ratio:3/4.4}
+.artist .txt{grid-column:7/13}
+.artist h2{margin:22px 0 34px}
+.artist .sig{font:italic 300 34px var(--serif);color:var(--grey);margin-top:30px}
+.artist p{max-width:520px;color:#4a4542;margin-bottom:18px}
+/* experience */
+.dark{background:var(--black);color:var(--cream)}
+.exp{text-align:left}
+.exp h2{max-width:11ch;font-size:clamp(46px,8.5vw,140px);margin:26px 0 90px}
+.exp ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid #3a3634}
+.exp li{padding:26px 22px 0 0;font:300 italic clamp(20px,1.9vw,27px)/1.25 var(--serif);color:var(--taupe)}
+.exp li b{display:block;font:400 10px var(--sans);font-style:normal;letter-spacing:.22em;color:var(--grey);margin-bottom:14px}
+.exp .ph{position:absolute;right:var(--pad);top:clamp(72px,11vw,160px);width:clamp(140px,22vw,300px);aspect-ratio:3/4;background:linear-gradient(160deg,#2a2624,#1c1918)}
+.exp .ph span{color:#6d6560}
+/* academy */
+.acad{background:var(--cream);border-top:1px solid var(--taupe);padding-block:clamp(56px,7vw,100px);display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.acad h3{font-size:clamp(28px,3.4vw,48px);margin:12px 0 10px}
+.acad p{max-width:440px;color:#4a4542}
+/* booking */
+.book{background:var(--taupe);display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.book .intro2{grid-column:1/5}
+.book h2{margin:20px 0 24px}
+.book .intro2 p{color:#4a4542;max-width:340px}
+#bf{grid-column:6/13;background:var(--off);padding:clamp(24px,4vw,56px);min-height:440px;display:flex;flex-direction:column}
+.steps{display:flex;gap:8px;margin-bottom:34px}
+.steps i{flex:1;height:1px;background:var(--taupe);transition:background .4s}
+.steps i.on{background:var(--black)}
+.pan{display:none;flex:1}.pan.on{display:block;animation:f .6s}
+@keyframes f{from{opacity:0}to{opacity:1}}
+.pan h3{font-size:30px;margin-bottom:22px}
+.opt{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid var(--taupe);cursor:pointer}
+.opt input{position:absolute;opacity:0}
+.opt:has(input:checked){font-weight:500}
+.opt:has(input:checked)::before{content:"—";margin-right:10px}
+.opt:has(input:focus-visible){outline:1px solid var(--black)}
+.opt span:first-of-type{flex:1}
+label.f{display:block;margin-bottom:18px}
+.f span{display:block;margin-bottom:6px}
+input[type=date],input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:300 16px var(--sans);padding:12px 0;border:0;border-bottom:1px solid var(--grey);background:transparent;color:var(--black);border-radius:0}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--black)}
+.nav2{display:flex;justify-content:space-between;margin-top:30px;align-items:center}
+.nav2 button{font:400 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--black);padding:15px 26px;cursor:pointer;color:var(--black);transition:.4s}
+.nav2 button:hover:not(:disabled){background:var(--black);color:var(--off)}
+.nav2 button:disabled{opacity:.3;cursor:default}
+.nav2 .bb{border:0;padding-left:0;color:var(--grey)}
+pre{white-space:pre-wrap;font:300 15px/1.7 var(--sans);background:var(--cream);padding:18px;margin-bottom:18px}
+/* contact */
+.contact{background:var(--off);display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.contact .c1{grid-column:1/6}
+.contact h2{margin:20px 0 40px}
+.contact dl{display:grid;grid-template-columns:110px 1fr;gap:14px 20px;margin-bottom:40px}
+.contact dt{font:400 11px/1.9 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.contact dd{margin:0}
+.map{grid-column:7/13;min-height:420px;background:var(--cream);border:1px solid var(--taupe);display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
+/* footer */
+footer{padding:clamp(60px,8vw,110px) var(--pad) 40px;background:var(--black);color:var(--cream)}
+footer .wm{font:300 clamp(60px,17vw,260px)/.85 var(--serif);letter-spacing:.14em;color:var(--taupe);margin-bottom:60px;white-space:nowrap;overflow:hidden}
+footer .r{display:flex;flex-wrap:wrap;gap:30px 60px;justify-content:space-between;align-items:flex-end;border-top:1px solid #3a3634;padding-top:30px;font-size:14px}
+footer .r div{display:flex;flex-direction:column;gap:6px}
+footer .cp{width:100%;color:var(--grey);font-size:12px;margin-top:20px}
+footer a:hover{color:var(--taupe)}
+/* mobile */
+@media(max-width:860px){
+.links{position:fixed;inset:0;background:var(--cream);flex-direction:column;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .6s cubic-bezier(.7,0,.2,1);z-index:-1}
+.links.open{transform:none}.links a:not(.btn){font-size:26px;font-family:var(--serif);letter-spacing:.04em;text-transform:none}
+.burger{display:block;z-index:60}
+.hero{grid-template-columns:1fr;padding-top:110px}
+.hero h1,.hero .img,.hero .sub{grid-column:1}.hero h1{grid-row:1;font-size:clamp(54px,17vw,90px)}
+.hero .img{grid-row:2;width:72%;margin:30px 0 30px auto;aspect-ratio:3/4}.hero .sub{grid-row:3}.hero .side{display:none}
+.intro,.artist,.book,.contact{display:block}
+.intro .small{margin-top:36px}.intro .tiny{width:46%;margin-top:40px}
+.row{grid-template-columns:1fr auto;gap:6px 14px;padding:24px 0}.row .n{display:none}.row p{grid-column:1/3;grid-row:2}.row .du{grid-row:3;font-size:13px;color:var(--grey)}.row .pr{grid-column:2;grid-row:1}.row .bk{grid-column:2;grid-row:3}
+.mos{grid-template-columns:repeat(6,1fr)}
+.m1{grid-column:1/5}.m2{grid-column:4/7;margin-top:-20px}.m3{grid-column:1/4;margin-top:20px}.m4{grid-column:4/7;margin-top:60px}.m5{grid-column:1/7;margin-top:20px}.m6{grid-column:2/6;margin-top:20px}
+.artist .portrait{width:84%;margin-bottom:40px}
+.exp ol{grid-template-columns:1fr 1fr}.exp li{padding-bottom:26px}.exp .ph{display:none}
+.book .intro2{margin-bottom:36px}.contact .map{margin-top:20px;min-height:260px}
+footer .r{align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.ph.rv{opacity:1;transform:none;clip-path:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav id="nav">
+ <a href="#top" class="logo" aria-label="VEYAS Beauty home">VEYAS<small>BEAUTY</small></a>
+ <button class="burger" id="bg" aria-expanded="false" aria-controls="lk">Menu</button>
+ <div class="links" id="lk">
+  <a href="#services">Nail Services</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#academy" class="acad">Veyas Academy</a>
+  <a href="#book" class="btn">Book Appointment</a>
+ </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+ <h1 class="rv">Beauty<br>in <em>Every</em> Detail.</h1>
+ <div class="ph img rv"><span>Replace — hero nail photograph (portrait)</span></div>
+ <div class="sub rv"><p>Thoughtfully crafted nail artistry, where precision meets personal expression.</p><a class="btn" href="#book">Book Appointment</a></div>
+ <span class="lbl side">Antwerp · Belgium</span>
+</section>
+
+<section class="intro">
+ <div class="lbl yrs rv" style="grid-column:1/5">Since 6+ years</div>
+ <p class="big rv" style="grid-row:2">Every set begins with a conversation, and ends with <em>a detail only you</em> will notice. Six years of nail artistry have taught me that elegance is rarely loud — it is exact.</p>
+ <p class="small rv">VEYAS Beauty is an independent practice in Antwerp. Each appointment is unhurried and individual: your nails, your preferences, my full attention from the first file stroke to the final coat.</p>
+ <div class="ph tiny rv"><span>Replace — close-up detail</span></div>
+</section>
+
+<section class="svc" id="services">
+ <header><div><p class="lbl">The Menu</p><h2 class="rv">Nail <em>Services</em></h2></div><p class="lbl">Prices to be confirmed</p></header>
+ <div id="menu"></div>
+ <p class="note">Placeholder services, durations and prices — edit the <code>SERVICES</code> list in the page script once real pricing is supplied.</p>
+</section>
+
+<section class="port" id="portfolio">
+ <header><div><p class="lbl">Nail Artistry</p><h2 class="rv">Selected <em>Work</em></h2></div><a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow on Instagram</a></header>
+ <div class="mos">
+  <div class="ph m1 rv"><span>French manicure</span></div>
+  <div class="ph m2 rv"><span>Nude &amp; natural</span></div>
+  <div class="ph m3 rv"><span>Gel extension</span></div>
+  <div class="ph m4 rv"><span>Detailed nail art</span></div>
+  <div class="ph m5 rv"><span>Creative &amp; colour</span></div>
+  <div class="ph m6 rv"><span>Everyday elegance</span></div>
+ </div>
+</section>
+
+<section class="artist" id="about">
+ <div class="ph portrait rv"><span>Replace — portrait of the artist</span></div>
+ <div class="txt">
+  <p class="lbl">The Artist</p>
+  <h2 class="rv">Behind the <em>brush.</em></h2>
+  <p class="rv">[Artist name placeholder] began working with nails more than six years ago, drawn to the quiet discipline of getting a small surface exactly right.</p>
+  <p class="rv">Her approach is personal rather than prescriptive: she listens, advises honestly, then builds a design around the hands it will live on.</p>
+  <p class="sig">— Veyas</p>
+ </div>
+</section>
+
+<section class="dark exp">
+ <p class="lbl">The Veyas Experience</p>
+ <h2 class="rv">An appointment, <em>made for you.</em></h2>
+ <div class="ph rv"><span>Replace — studio atmosphere</span></div>
+ <ol>
+  <li class="rv"><b>01</b>Personal attention</li><li class="rv"><b>02</b>Precision in every line</li><li class="rv"><b>03</b>Professional artistry</li><li class="rv"><b>04</b>A welcoming space</li><li class="rv"><b>05</b>Your preferences, first</li>
+ </ol>
+</section>
+
+<section class="acad" id="academy">
+ <div><p class="lbl">Education</p><h3>Veyas <em>Academy</em></h3><p>Professional beauty training, shared by the artist behind VEYAS.</p></div>
+ <a class="btn" href="#" aria-label="Explore Veyas Academy (link to be added)">Explore the academy</a>
+</section>
+
+<section class="book" id="book">
+ <div class="intro2"><p class="lbl">Appointments</p><h2>Request <em>a time.</em></h2><p>Choose a service and a preferred slot. Your request is sent to VEYAS directly, and the appointment is confirmed personally — nothing is booked until you hear back.</p></div>
+ <form id="bf" onsubmit="return false">
+  <div class="steps"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <div class="pan on" data-s="0"><h3>Select a service</h3><div id="opts"></div></div>
+  <div class="pan" data-s="1"><h3>Preferred date</h3><label class="f"><span class="lbl">Date</span><input type="date" id="d"></label><p class="note">Your date is a preference. Availability is confirmed by VEYAS.</p></div>
+  <div class="pan" data-s="2"><h3>Preferred time</h3><div id="times"></div></div>
+  <div class="pan" data-s="3"><h3>Your details</h3>
+   <label class="f"><span class="lbl">Name</span><input type="text" id="n" autocomplete="name"></label>
+   <label class="f"><span class="lbl">Email or phone</span><input type="text" id="c" autocomplete="email"></label>
+   <label class="f"><span class="lbl">Notes (optional)</span><textarea id="no" rows="2"></textarea></label></div>
+  <div class="pan" data-s="4"><h3>Review &amp; send</h3><pre id="sum"></pre>
+   <a class="btn" id="send" href="https://ig.me/m/" target="_blank" rel="noopener">Send request via Instagram</a>
+   <p class="note" id="cm"></p></div>
+  <div class="nav2"><button type="button" class="bb" id="bk">Back</button><button type="button" id="nx" disabled>Continue</button></div>
+ </form>
+</section>
+
+<section class="contact" id="contact">
+ <div class="c1"><p class="lbl">Visit</p><h2 class="rv">Find <em>VEYAS</em></h2>
+  <dl><dt>Location</dt><dd>[Street address], Antwerp, Belgium</dd><dt>Hours</dt><dd>[Opening hours — by appointment]</dd><dt>Contact</dt><dd>[email] · [phone]</dd><dt>Instagram</dt><dd><a href="https://www.instagram.com/" target="_blank" rel="noopener">@[handle]</a></dd></dl>
+  <a class="btn" href="#book">Book Appointment</a></div>
+ <div class="map"><div><p class="lbl">Map</p><p class="note">Embed Google or OpenStreetMap here once the address is confirmed.</p></div></div>
+</section>
+</main>
+
+<footer>
+ <div class="wm" aria-hidden="true">VEYAS</div>
+ <div class="r">
+  <div><span class="lbl">Navigate</span><a href="#services">Nail Services</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#academy">Veyas Academy</a></div>
+  <div><span class="lbl">Contact</span><span>[email] · [phone]</span><span>Antwerp, Belgium</span><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></div>
+  <a class="btn inv" href="#book">Book Appointment</a>
+  <p class="cp">© 2026 VEYAS Beauty. All rights reserved.</p>
+ </div>
+</footer>
+
+<script>
+var SERVICES=[
+["Classic Manicure","Shaping, cuticle care and polish.","45 min","€ —"],
+["Gel Polish","Long-wear colour with a glass finish.","60 min","€ —"],
+["Gel / Acrylic Extensions","Sculpted length and shape, tailored to your hands.","120 min","€ —"],
+["Nail Art","Hand-painted detail, French and bespoke designs.","+30 min","€ —"],
+["Infill & Maintenance","Refresh and rebalance an existing set.","90 min","€ —"],
+["Removal & Care","Gentle removal with a nourishing treatment.","30 min","€ —"]];
+var TIMES=["Morning (09:00–12:00)","Afternoon (12:00–16:00)","Evening (16:00–19:00)"];
+var m=document.getElementById("menu"),o=document.getElementById("opts"),t=document.getElementById("times");
+SERVICES.forEach(function(s,i){
+ m.insertAdjacentHTML("beforeend",'<div class="row rv"><span class="lbl n">0'+(i+1)+'</span><h3>'+s[0]+'</h3><p>'+s[1]+'</p><span class="du lbl">'+s[2]+'</span><span class="pr">'+s[3]+'</span><a class="bk" href="#book" data-s="'+i+'">Book</a></div>');
+ o.insertAdjacentHTML("beforeend",'<label class="opt"><input type="radio" name="sv" value="'+s[0]+'"><span>'+s[0]+'</span><span class="lbl">'+s[2]+'</span></label>');
+});
+TIMES.forEach(function(x){t.insertAdjacentHTML("beforeend",'<label class="opt"><input type="radio" name="tm" value="'+x+'"><span>'+x+'</span></label>')});
+var nav=document.getElementById("nav"),lk=document.getElementById("lk"),bg=document.getElementById("bg");
+function sc(){nav.classList.toggle("s",scrollY>40)}addEventListener("scroll",sc,{passive:true});sc();
+bg.onclick=function(){var x=lk.classList.toggle("open");bg.setAttribute("aria-expanded",x);bg.textContent=x?"Close":"Menu"};
+lk.addEventListener("click",function(e){if(e.target.tagName=="A"){lk.classList.remove("open");bg.textContent="Menu";bg.setAttribute("aria-expanded",false)}});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+setTimeout(function(){document.querySelector(".hero h1").classList.add("in")},100);
+/* booking */
+var st=0,P=document.querySelectorAll(".pan"),B=document.querySelectorAll(".steps i"),nx=document.getElementById("nx"),bk=document.getElementById("bk");
+function v(n){return(document.querySelector('input[name="'+n+'"]:checked')||{}).value}
+function ok(){return[!!v("sv"),!!document.getElementById("d").value,!!v("tm"),!!document.getElementById("n").value.trim()&&!!document.getElementById("c").value.trim(),true][st]}
+function msg(){var n=document.getElementById("no").value.trim();return"Hello VEYAS, I would like to request an appointment.\nService: "+v("sv")+"\nPreferred date: "+document.getElementById("d").value+"\nPreferred time: "+v("tm")+"\nName: "+document.getElementById("n").value.trim()+"\nContact: "+document.getElementById("c").value.trim()+(n?"\nNotes: "+n:"")}
+function go(i){st=i;P.forEach(function(p,k){p.classList.toggle("on",k==i)});B.forEach(function(b,k){b.classList.toggle("on",k<=i)});
+ bk.style.visibility=i?"visible":"hidden";nx.style.display=i==4?"none":"";if(i==4)document.getElementById("sum").textContent=msg();up()}
+function up(){nx.disabled=!ok()}
+document.getElementById("bf").addEventListener("input",up);
+nx.onclick=function(){if(ok())go(st+1)};bk.onclick=function(){go(st-1)};
+document.getElementById("send").onclick=function(){var s=document.getElementById("cm");try{navigator.clipboard.writeText(msg());s.textContent="Your request is copied. Paste it into the Instagram message. Not confirmed until VEYAS replies."}catch(e){s.textContent="Copy the request above and send it to VEYAS. Not confirmed until VEYAS replies."}};
+document.querySelectorAll(".bk").forEach(function(a){a.addEventListener("click",function(){var r=o.children[a.dataset.s].querySelector("input");r.checked=true;go(0);up()})});
+document.getElementById("d").min=new Date().toISOString().slice(0,10);
+go(0);
+</script>
+</body>
+</html>
