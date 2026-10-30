@@ -43,7 +43,7 @@ export const MediaFrame = ({
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 640px) 90vw, 45vw"
+          sizes="(max-width: 640px) 48vw, 45vw"
           priority={priority}
         />
       )}

@@ -1,6 +1,6 @@
 "use client";
 
-import type { JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 import { PORTFOLIO_MEDIA } from "@/data/media";
 import { SITE } from "@/data/site";
 import { useLocale } from "@/context/LocaleContext";
@@ -10,10 +10,23 @@ import { MediaFrame } from "@/components/MediaFrame/MediaFrame";
 import "./portfolio.desktop.css";
 import "./portfolio.mobile.css";
 
+const MOBILE_MAX = 640;
+
 export const Portfolio = (): JSX.Element => {
   const { dictionary } = useLocale();
   const { portfolio } = dictionary;
   const dictRecord = dictionary as unknown as Record<string, unknown>;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${MOBILE_MAX}px)`);
+    const sync = (): void => {
+      setIsMobile(media.matches);
+    };
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
 
   return (
     <section className="port" id="portfolio">
@@ -37,15 +50,22 @@ export const Portfolio = (): JSX.Element => {
 
       <div className="port__mos">
         {PORTFOLIO_MEDIA.map((item) => {
-          const label = resolvePath(dictRecord, item.labelKey);
+          const labelKey =
+            isMobile && item.mobileLabelKey
+              ? item.mobileLabelKey
+              : item.labelKey;
+          const label = resolvePath(dictRecord, labelKey);
+          const src = isMobile ? item.mobileSrc : item.src;
+          const type = isMobile ? "image" : item.type;
+
           return (
             <MediaFrame
-              key={item.id}
+              key={`${item.id}-${isMobile ? "m" : "d"}`}
               className={item.className}
-              src={item.src}
+              src={src}
               alt={label}
-              type={item.type}
-              label={label}
+              type={type}
+              label={isMobile ? undefined : label}
             />
           );
         })}

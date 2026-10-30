@@ -69,6 +69,10 @@ export type Dictionary = {
       powderProcess: string;
       freshLashes: string;
       nailArt: string;
+      frenchTip: string;
+      classicFrench: string;
+      floral: string;
+      burgundy: string;
     };
   };
   artist: {

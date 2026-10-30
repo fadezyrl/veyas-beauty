@@ -17,13 +17,16 @@
   }
 
   .intro__small {
-    margin-top: 36px;
+    margin-top: 24px;
     color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 36ch;
   }
 
   .intro__tiny {
-    width: 46%;
-    margin-top: 40px;
-    aspect-ratio: 4 / 5;
+    width: 42%;
+    margin-top: 28px;
+    aspect-ratio: 1 / 1;
   }
 }
