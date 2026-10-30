@@ -9,7 +9,7 @@ type MediaFrameProps = {
   src: string;
   alt: string;
   className?: string;
-  type?: "image" | "video";
+  type?: "image";
   priority?: boolean;
   reveal?: boolean;
   label?: string;
@@ -19,34 +19,21 @@ export const MediaFrame = ({
   src,
   alt,
   className = "",
-  type,
   priority = false,
   reveal = true,
   label,
 }: MediaFrameProps): JSX.Element => {
-  const mediaType = type ?? (src.endsWith(".mp4") ? "video" : "image");
   const frameClass = `ph media-frame ${className}`.trim();
 
   const content = (
     <>
-      {mediaType === "video" ? (
-        <video
-          src={src}
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-label={alt}
-        />
-      ) : (
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 640px) 48vw, 45vw"
-          priority={priority}
-        />
-      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 640px) 48vw, 45vw"
+        priority={priority}
+      />
       {label ? <span className="media-frame__label">{label}</span> : null}
     </>
   );

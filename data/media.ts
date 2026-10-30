@@ -1,7 +1,7 @@
 export type MediaAsset = {
   src: string;
   altKey: string;
-  type: "image" | "video";
+  type: "image";
 };
 
 export type PortfolioMediaItem = {
@@ -9,12 +9,13 @@ export type PortfolioMediaItem = {
   className: string;
   labelKey: string;
   src: string;
-  type: "image" | "video";
-  /** Mobile gallery uses photographs only (desktop unchanged). */
-  mobileSrc: string;
-  mobileLabelKey?: string;
+  type: "image";
 };
 
+/**
+ * Section images — never reused in portfolio / work.
+ * Hero, Intro, Artist, Experience each get a unique photo.
+ */
 export const MEDIA = {
   hero: {
     src: "/assets/french-tip-nails.jpg",
@@ -27,17 +28,21 @@ export const MEDIA = {
     type: "image",
   },
   artist: {
-    src: "/assets/lashes.mp4",
+    src: "/assets/mobile-images/powder-brows-portrait.jpg",
     altKey: "artist.imageLabel",
-    type: "video",
+    type: "image",
   },
   experience: {
-    src: "/assets/powderbrows.mp4",
+    src: "/assets/mobile-images/volume-lashes-mirror.jpg",
     altKey: "experience.imageLabel",
-    type: "video",
+    type: "image",
   },
 } as const satisfies Record<string, MediaAsset>;
 
+/**
+ * Work / portfolio only — images not used in other sections.
+ * Same set for mobile and desktop (no videos).
+ */
 export const PORTFOLIO_MEDIA: readonly PortfolioMediaItem[] = [
   {
     id: "m1",
@@ -45,50 +50,68 @@ export const PORTFOLIO_MEDIA: readonly PortfolioMediaItem[] = [
     labelKey: "portfolio.items.french",
     src: "/assets/turquoise-french-nails.jpg",
     type: "image",
-    mobileSrc: "/assets/turquoise-french-nails.jpg",
   },
   {
     id: "m2",
     className: "m2",
-    labelKey: "portfolio.items.powderBrows",
-    src: "/assets/powderbrows.jpg",
+    labelKey: "portfolio.items.burgundy",
+    src: "/assets/burgundy-nails.jpg",
     type: "image",
-    mobileSrc: "/assets/powderbrows.jpg",
   },
   {
     id: "m3",
     className: "m3",
-    labelKey: "portfolio.items.lashes",
-    src: "/assets/lashes.mp4",
-    type: "video",
-    mobileSrc: "/assets/french-tip-nails.jpg",
-    mobileLabelKey: "portfolio.items.frenchTip",
+    labelKey: "portfolio.items.floral",
+    src: "/assets/floral-nail-art.jpg",
+    type: "image",
   },
   {
     id: "m4",
     className: "m4",
-    labelKey: "portfolio.items.powderProcess",
-    src: "/assets/powder.mp4",
-    type: "video",
-    mobileSrc: "/assets/classic-french-nails.jpg",
-    mobileLabelKey: "portfolio.items.classicFrench",
+    labelKey: "portfolio.items.classicFrench",
+    src: "/assets/classic-french-nails.jpg",
+    type: "image",
   },
   {
     id: "m5",
     className: "m5",
-    labelKey: "portfolio.items.freshLashes",
-    src: "/assets/fresh-lashes.mp4",
-    type: "video",
-    mobileSrc: "/assets/floral-nail-art.jpg",
-    mobileLabelKey: "portfolio.items.floral",
+    labelKey: "portfolio.items.nudeFrench",
+    src: "/assets/mobile-images/nude-french-nails.jpg",
+    type: "image",
   },
   {
     id: "m6",
     className: "m6",
-    labelKey: "portfolio.items.nailArt",
-    src: "/assets/cherry-nails.mp4",
-    type: "video",
-    mobileSrc: "/assets/burgundy-nails.jpg",
-    mobileLabelKey: "portfolio.items.burgundy",
+    labelKey: "portfolio.items.lashExtensionsEyes",
+    src: "/assets/mobile-images/lash-extensions-eyes.jpg",
+    type: "image",
+  },
+  {
+    id: "m7",
+    className: "m7",
+    labelKey: "portfolio.items.lashLiftBefore",
+    src: "/assets/mobile-images/lash-lift-before.jpg",
+    type: "image",
+  },
+  {
+    id: "m8",
+    className: "m8",
+    labelKey: "portfolio.items.lashLiftAfter",
+    src: "/assets/mobile-images/lash-lift-after.jpg",
+    type: "image",
+  },
+  {
+    id: "m9",
+    className: "m9",
+    labelKey: "portfolio.items.powderBrowsHealed",
+    src: "/assets/mobile-images/powder-brows-healed.jpg",
+    type: "image",
+  },
+  {
+    id: "m10",
+    className: "m10",
+    labelKey: "portfolio.items.volumeLashesDetail",
+    src: "/assets/mobile-images/volume-lashes-detail.jpg",
+    type: "image",
   },
 ] as const;

@@ -50,21 +50,14 @@ export const Portfolio = (): JSX.Element => {
 
       <div className="port__mos">
         {PORTFOLIO_MEDIA.map((item) => {
-          const labelKey =
-            isMobile && item.mobileLabelKey
-              ? item.mobileLabelKey
-              : item.labelKey;
-          const label = resolvePath(dictRecord, labelKey);
-          const src = isMobile ? item.mobileSrc : item.src;
-          const type = isMobile ? "image" : item.type;
-
+          const label = resolvePath(dictRecord, item.labelKey);
           return (
             <MediaFrame
-              key={`${item.id}-${isMobile ? "m" : "d"}`}
-              className={item.className}
-              src={src}
+              key={item.id}
+              className={isMobile ? `port__tile ${item.className}` : item.className}
+              src={item.src}
               alt={label}
-              type={type}
+              type="image"
               label={isMobile ? undefined : label}
             />
           );

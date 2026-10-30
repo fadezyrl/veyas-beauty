@@ -19,8 +19,7 @@
   clip-path: none;
 }
 
-.media-frame img,
-.media-frame video {
+.media-frame img {
   position: absolute;
   inset: 0;
   width: 100%;

@@ -15,7 +15,6 @@
     font-size: clamp(34px, 10vw, 48px);
   }
 
-  /* Balanced 2-column square photo grid */
   .port__mos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -30,13 +29,17 @@
   .port__mos .m3,
   .port__mos .m4,
   .port__mos .m5,
-  .port__mos .m6 {
+  .port__mos .m6,
+  .port__mos .m7,
+  .port__mos .m8,
+  .port__mos .m9,
+  .port__mos .m10,
+  .port__mos .port__tile {
     grid-column: auto;
     margin-top: 0;
     width: 100%;
     min-width: 0;
     aspect-ratio: 1 / 1;
-    /* Subtle, natural enhancement — keep photos realistic */
     filter: contrast(1.03) saturate(1.04);
   }
 

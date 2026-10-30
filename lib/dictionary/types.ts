@@ -64,15 +64,15 @@ export type Dictionary = {
     instagram: string;
     items: {
       french: string;
-      powderBrows: string;
-      lashes: string;
-      powderProcess: string;
-      freshLashes: string;
-      nailArt: string;
-      frenchTip: string;
-      classicFrench: string;
-      floral: string;
       burgundy: string;
+      floral: string;
+      classicFrench: string;
+      nudeFrench: string;
+      lashExtensionsEyes: string;
+      lashLiftBefore: string;
+      lashLiftAfter: string;
+      powderBrowsHealed: string;
+      volumeLashesDetail: string;
     };
   };
   artist: {

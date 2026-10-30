@@ -58,6 +58,30 @@
     margin-top: 10px;
   }
 
+  .port__mos .m7 {
+    grid-column: 1 / 4;
+    aspect-ratio: 3 / 4;
+    margin-top: 24px;
+  }
+
+  .port__mos .m8 {
+    grid-column: 4 / 7;
+    aspect-ratio: 1 / 1.15;
+    margin-top: 80px;
+  }
+
+  .port__mos .m9 {
+    grid-column: 7 / 10;
+    aspect-ratio: 3 / 4;
+    margin-top: 24px;
+  }
+
+  .port__mos .m10 {
+    grid-column: 10 / 13;
+    aspect-ratio: 3 / 4.2;
+    margin-top: 60px;
+  }
+
   .port__mos .ph:hover {
     filter: brightness(0.97);
   }
